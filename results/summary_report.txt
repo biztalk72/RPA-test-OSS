@@ -1,0 +1,10 @@
+RPA Benchmark Summary Report
+============================================================
+
+
+rpa-python - excel-automation
+----------------------------------------
+Success Rate: 10/10
+Mean Duration: 317.50 ms
+Median Duration: 318.00 ms
+Std Dev: 2.55 ms
