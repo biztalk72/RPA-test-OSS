@@ -235,10 +235,15 @@ def main():
             "command": ["python3", "implementations/rpa-python/excel_test.py"]
         },
         {
-            "tool": "robot-framework",
-            "scenario": "excel-automation",
-            "command": ["robot", "--outputdir", "results/robot-logs", "--log", "NONE", "--report", "NONE", "implementations/robot-framework/excel_test.robot"]
+            "tool": "rpa-python",
+            "scenario": "integrated-workflow",
+            "command": ["python3", "implementations/rpa-python/integrated_test.py"]
         },
+        # {
+        #     "tool": "robot-framework",
+        #     "scenario": "excel-automation",
+        #     "command": ["robot", "--outputdir", "results/robot-logs", "--log", "NONE", "--report", "NONE", "implementations/robot-framework/excel_test.robot"]
+        # },
         # {
         #     "tool": "tagui",
         #     "scenario": "excel-automation",
