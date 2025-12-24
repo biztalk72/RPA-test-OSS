@@ -234,12 +234,11 @@ def main():
             "scenario": "excel-automation",
             "command": ["python3", "implementations/rpa-python/excel_test.py"]
         },
-        # Add more configurations as you implement them:
-        # {
-        #     "tool": "robot-framework",
-        #     "scenario": "excel-automation",
-        #     "command": ["robot", "implementations/robot-framework/excel_test.robot"]
-        # },
+        {
+            "tool": "robot-framework",
+            "scenario": "excel-automation",
+            "command": ["robot", "--outputdir", "results/robot-logs", "--log", "NONE", "--report", "NONE", "implementations/robot-framework/excel_test.robot"]
+        },
         # {
         #     "tool": "tagui",
         #     "scenario": "excel-automation",
