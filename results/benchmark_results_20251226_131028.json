@@ -1,0 +1,16 @@
+[
+  {
+    "tool": "rpa-python",
+    "scenario": "excel-automation",
+    "iteration": 1,
+    "timestamp": "2025-12-26T04:10:27.885566Z",
+    "duration_ms": 523,
+    "memory_mb": 0.28,
+    "cpu_percent": 30.1,
+    "status": "success",
+    "errors": [],
+    "stdout": "Step 1: Creating new workbook\nStep 2: Writing 100 to A1\nStep 3: Writing formula =A1*2 to B1\nStep 4: Verifying B1 equals 200\n\u2713 B1 formula = =A1*2, calculated = 200\nStep 5: Updating A1 to 250\nStep 6: Verifying B1 equals 500\n\u2713 B1 formula = =A1*2, calculated = 500\nStep 7: Writing formula =SUM(A1:A5) to C1\nStep 8: Writing values 10-50 to A1:A5\nStep 9: Verifying C1 equals 150\n\u2713 C1 formula = =SUM(A1:A5), calculated sum = 150\n\n\u2713 All Excel automation tests passed!\n",
+    "stderr": "",
+    "exit_code": 0
+  }
+]
