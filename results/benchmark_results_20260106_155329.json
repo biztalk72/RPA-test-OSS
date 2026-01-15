@@ -1,0 +1,50 @@
+[
+  {
+    "tool": "rpa-python",
+    "scenario": "business-workflow",
+    "iteration": 1,
+    "timestamp": "2026-01-06T06:53:26.948327Z",
+    "duration_ms": 317,
+    "memory_mb": 0,
+    "cpu_percent": 0,
+    "status": "failed",
+    "errors": [
+      "Exit code: 1"
+    ],
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/Users/sy2024051047/Documents/PJ/Workspace/RPA-test-OSS/implementations/rpa-python/business_workflow_test.py\", line 17, in <module>\n    import openpyxl\nModuleNotFoundError: No module named 'openpyxl'\n",
+    "exit_code": 1
+  },
+  {
+    "tool": "rpa-python",
+    "scenario": "business-workflow",
+    "iteration": 2,
+    "timestamp": "2026-01-06T06:53:28.268670Z",
+    "duration_ms": 324,
+    "memory_mb": 0,
+    "cpu_percent": 0,
+    "status": "failed",
+    "errors": [
+      "Exit code: 1"
+    ],
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/Users/sy2024051047/Documents/PJ/Workspace/RPA-test-OSS/implementations/rpa-python/business_workflow_test.py\", line 17, in <module>\n    import openpyxl\nModuleNotFoundError: No module named 'openpyxl'\n",
+    "exit_code": 1
+  },
+  {
+    "tool": "rpa-python",
+    "scenario": "business-workflow",
+    "iteration": 3,
+    "timestamp": "2026-01-06T06:53:29.598962Z",
+    "duration_ms": 312,
+    "memory_mb": 0,
+    "cpu_percent": 0,
+    "status": "failed",
+    "errors": [
+      "Exit code: 1"
+    ],
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/Users/sy2024051047/Documents/PJ/Workspace/RPA-test-OSS/implementations/rpa-python/business_workflow_test.py\", line 17, in <module>\n    import openpyxl\nModuleNotFoundError: No module named 'openpyxl'\n",
+    "exit_code": 1
+  }
+]

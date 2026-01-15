@@ -1,9 +1,105 @@
 # RPA Benchmarking Test Scenarios
 
 ## Overview
-Each test scenario will be executed 10 times per RPA solution to ensure statistical reliability and identify consistency issues.
+Each test scenario will be executed 100 times per RPA solution to ensure statistical reliability and identify consistency issues.
 
-## Test Scenario 1: Excel Native Application Automation
+## Test Scenario 1: Integrated Business Workflow (PRIMARY)
+
+### Objective
+Simulate a real-world business automation workflow that combines Excel data management, web data collection, and comparative analysis.
+
+### Business Context
+**Scenario**: Daily Product Price Monitoring System
+- A company maintains a product catalog in Excel with target prices
+- Need to scrape competitor prices from e-commerce websites daily
+- Compare actual market prices against target prices
+- Generate analysis report with price variance calculations
+- Highlight products that need price adjustments
+
+### Workflow Steps
+
+#### Phase 1: Excel Initial Setup (Data Preparation)
+1. Create Excel workbook with "Product Catalog" sheet
+2. Add product data:
+   - Column A: Product Name (5 products)
+   - Column B: Target Price
+   - Column C: Category
+   - Column D: Last Updated Date
+3. Write formulas for initial calculations
+4. Save as `product_catalog.xlsx`
+
+#### Phase 2: Web Data Collection
+5. Navigate to test e-commerce site (quotes.toscrape.com as proxy)
+6. Extract data for 5 items:
+   - Item identifier
+   - Current price/quote text
+   - Author/Source
+   - Tags/Categories
+7. Store scraped data in structured format (list/array)
+8. Log collection timestamp
+
+#### Phase 3: Excel Data Integration & Analysis
+9. Open existing `product_catalog.xlsx`
+10. Create new sheet "Market Data"
+11. Write scraped data to "Market Data" sheet:
+    - Column A: Item Name
+    - Column B: Market Price (use quote text length as proxy numeric value)
+    - Column C: Source
+    - Column D: Collection Date
+12. Create "Analysis" sheet with comparison formulas:
+    - Calculate price variance: `=Market_Price - Target_Price`
+    - Calculate variance percentage: `=(Variance/Target_Price)*100`
+    - Flag items: `=IF(Variance>10%, "REVIEW", "OK")`
+13. Add summary statistics:
+    - Average variance
+    - Max/Min variance
+    - Count of items needing review
+14. Save updated workbook as `product_analysis.xlsx`
+
+#### Phase 4: Verification & Validation
+15. Re-open both Excel files
+16. Verify all formulas calculated correctly
+17. Confirm data integrity:
+    - Original data unchanged in catalog
+    - Market data properly imported
+    - Analysis formulas working
+18. Compare initial vs final state
+19. Generate success/failure report
+20. Cleanup test files
+
+### Success Criteria
+- All 3 phases complete without errors
+- Excel formulas calculate correctly
+- Web data successfully scraped (5 items minimum)
+- Data properly integrated across sheets
+- Analysis calculations accurate
+- Files saved and verified
+- Original data integrity maintained
+- Cleanup successful
+
+### Metrics to Collect
+- Total workflow duration (ms)
+- Phase 1 duration (Excel setup)
+- Phase 2 duration (Web scraping)
+- Phase 3 duration (Integration & Analysis)
+- Phase 4 duration (Verification)
+- Memory usage (peak MB)
+- CPU usage (%)
+- Success/failure status
+- Number of retries (if any)
+- Error types (if any)
+
+### Evaluation Criteria
+- **Correctness**: All data accurate and formulas working (40 points)
+- **Performance**: Execution time < 15 seconds (20 points)
+- **Reliability**: 95%+ success rate over 100 runs (20 points)
+- **Resource Efficiency**: Memory < 100MB, CPU < 80% (10 points)
+- **Error Handling**: Graceful failure recovery (10 points)
+- **Total**: 100 points
+
+---
+
+## Test Scenario 2: Excel Native Application Automation (LEGACY)
 
 ### Objective
 Test the ability to interact with native Excel application, manipulate cells, and verify formula calculations.

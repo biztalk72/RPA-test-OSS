@@ -231,23 +231,27 @@ def main():
     test_configs = [
         {
             "tool": "rpa-python",
-            "scenario": "excel-automation",
-            "command": ["python3", "implementations/rpa-python/excel_test.py"]
+            "scenario": "business-workflow",
+            "command": ["python3", "implementations/rpa-python/business_workflow_test.py"],
+            "iterations": 100
         },
         {
             "tool": "rpa-python",
-            "scenario": "integrated-workflow",
-            "command": ["python3", "implementations/rpa-python/integrated_test.py"]
+            "scenario": "excel-automation",
+            "command": ["python3", "implementations/rpa-python/excel_test.py"],
+            "iterations": 100
         },
         # {
         #     "tool": "robot-framework",
-        #     "scenario": "excel-automation",
-        #     "command": ["robot", "--outputdir", "results/robot-logs", "--log", "NONE", "--report", "NONE", "implementations/robot-framework/excel_test.robot"]
+        #     "scenario": "business-workflow",
+        #     "command": ["robot", "--outputdir", "results/robot-logs", "--log", "NONE", "--report", "NONE", "implementations/robot-framework/business_workflow_test.robot"],
+        #     "iterations": 100
         # },
         # {
-        #     "tool": "tagui",
+        #     "tool": "robot-framework",
         #     "scenario": "excel-automation",
-        #     "command": ["tagui", "implementations/tagui/excel_test.tag"]
+        #     "command": ["robot", "--outputdir", "results/robot-logs", "--log", "NONE", "--report", "NONE", "implementations/robot-framework/excel_test.robot"],
+        #     "iterations": 100
         # },
     ]
     
@@ -264,11 +268,12 @@ def main():
     
     # Run all tests
     for config in test_configs:
+        iterations = config.get("iterations", 10)  # Default to 10 if not specified
         runner.run_scenario_iterations(
             tool=config["tool"],
             scenario=config["scenario"],
             test_command=config["command"],
-            iterations=10
+            iterations=iterations
         )
     
     # Generate final report
